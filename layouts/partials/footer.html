@@ -1,11 +1,11 @@
 <footer id="colophon" class="site-footer">
   <p class="site-info">
-    {{ site.params.footer.content | safe }}
+    {{ .Site.Params.footer.content | safeHTML }}
     &nbsp;
-    {% for link in site.params.footer.links %}
-    <a href="{{ link.url }}" {% if link.new_window %}target="_blank" rel="noopener"
-      {% endif %}>{{ link.text }}</a>.
-    {% endfor %}
+    {{ range $link := .Site.Params.footer.links }}
+    <a href="{{ $link.url }}" {{ if $link.new_window }}target="_blank" rel="noopener"
+      {{ end }}>{{ $link.text }}</a>.
+    {{ end }}
   </p><!-- .site-info -->
   <a id="to-top" class="to-top" href="#page"><span class="icon-arrow-up" aria-hidden="true"></span><span
       class="screen-reader-text">Back to top</span></a>
