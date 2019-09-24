@@ -1,3 +1,4 @@
+window.onGatsbyRouteUpdate = function() {
 /**
  * Main JS file for theme behaviours
  */
@@ -24,3 +25,5 @@ document.querySelector('#to-top').addEventListener('click', function (e) {
   e.preventDefault();
   document.querySelector('#page').scrollIntoView({ behavior: 'smooth' });
 });
+
+};
